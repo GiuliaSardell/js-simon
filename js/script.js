@@ -20,6 +20,7 @@ const box = document.getElementById('box')
 console.log(box)
 const h3 = document.querySelector('h3')
 let randomNumArr = []
+let numeroUtenteArr = []
 let counter = 0
 let attempts = 0
 
@@ -51,11 +52,17 @@ setTimeout(function(){
   console.log('numero inserito: ',numeroUtente)
   console.log('array',randomNumArr)
 
+    
+
     if (randomNumArr.includes(numeroUtente)){
       console.log('indovinato')
+
+      numeroUtenteArr.push(numeroUtente)
+      console.log('numeroUtenteArr',numeroUtenteArr)
+
       attempts++
 
-      box.innerHTML += `<span> ${numeroUtente+', '} </span>`
+      box.innerHTML = `<span> ${numeroUtenteArr} </span>`
       h3.innerHTML = `<span> Hai indovinato ${attempts} numeri</span>`
       
 
@@ -67,7 +74,7 @@ setTimeout(function(){
   }
 
   
-}, 5001);
+}, 5010);
 
 
 
