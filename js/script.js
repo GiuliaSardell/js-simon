@@ -18,9 +18,10 @@ Consigli del giorno:
 
 const box = document.getElementById('box')
 console.log(box)
+const h3 = document.querySelector('h3')
 let randomNumArr = []
 let counter = 0
-
+let attempts = 0
 
 
 let stampaNumeri = box.innerHTML += `
@@ -52,10 +53,13 @@ setTimeout(function(){
 
     if (randomNumArr.includes(numeroUtente)){
       console.log('indovinato')
-      box.innerHTML += `<span>${numeroUtente},</span>`
+      attempts++
 
-      let numeroIndovinato = randomNumArr.includes(numeroUtente)
-      console.log('numero indovinato', numeroIndovinato)
+      box.innerHTML += `<span> ${numeroUtente+', '} </span>`
+      h3.innerHTML = `<span> Hai indovinato ${attempts} numeri</span>`
+      
+
+      
     } else {
       console.log('hai perso')
     }
@@ -63,12 +67,14 @@ setTimeout(function(){
   }
 
   
-}, 6000);
+}, 5001);
 
 
 
 
+// function stampa(num){
 
+// }
 
 
 
